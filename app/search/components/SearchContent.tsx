@@ -1,5 +1,6 @@
 "use client";
 
+import LikeButton from "@/components/LikeButton";
 import MediaItem from "@/components/MediaItem";
 import { Song } from "@/types";
 import { BiFullscreen } from "react-icons/bi";
@@ -32,7 +33,7 @@ const SearchContent = ({ songs }: ISearchContentProps): JSX.Element => {
           <div className="flex-1">
             <MediaItem onClick={() => {}} data={song} />
           </div>
-          {/* TODO: Add Like Button Here */}
+          <LikeButton songID={song.id} />
         </div>
       ))}
     </div>
