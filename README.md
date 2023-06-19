@@ -1,3 +1,5 @@
+<h1 align="center"><a href="https://spotify-clone-37awb8v1u-nkolosov097.vercel.app/" target="_blank">Spotify Clone</a></h1>
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
