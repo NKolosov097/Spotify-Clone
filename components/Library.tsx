@@ -7,12 +7,14 @@ import useUploadModal from "@/hooks/useUploadModal";
 import { Song } from "@/types";
 import MediaItem from "./MediaItem";
 import useOnPlay from "@/hooks/useOnPlay";
+import useSubscribeModal from "@/hooks/useSubscribeModal";
 
 interface ILibraryProps {
   songs: Array<Song>;
 }
 
 const Library = ({ songs }: ILibraryProps): JSX.Element => {
+  const subscribeModal = useSubscribeModal();
   const authModal = useAuthModal();
   const uploadModal = useUploadModal();
   const { user, subscription } = useUser();
@@ -24,7 +26,9 @@ const Library = ({ songs }: ILibraryProps): JSX.Element => {
       return authModal.onOpen();
     }
 
-    //TODO: check user subscription
+    if (!subscription) {
+      return subscribeModal.onOpen();
+    }
     return uploadModal.onOpen();
   };
   return (
